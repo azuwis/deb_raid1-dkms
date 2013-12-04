@@ -1,0 +1,3 @@
+src/*.c      usr/src/raid1-@UPSTREAM_VERSION@
+src/*.h      usr/src/raid1-@UPSTREAM_VERSION@
+src/Makefile usr/src/raid1-@UPSTREAM_VERSION@

@@ -1,0 +1,15 @@
+#!/usr/bin/make -f
+
+PACKAGE_SOURCE   := $(shell dpkg-parsechangelog | grep Source: | cut -d" " -f2)
+UPSTREAM_VERSION := $(shell dpkg-parsechangelog | grep Version: | cut -d" " -f2 | cut -d"-" -f1)
+
+%:
+	dh "$@" --with dkms
+
+# we don't actually build/clean the source here, it's dkms
+override_dh_auto_clean:
+	rm -f debian/$(PACKAGE_SOURCE).install
+
+override_dh_auto_build:
+	sed 's/@UPSTREAM_VERSION@/'$(UPSTREAM_VERSION)/ debian/$(PACKAGE_SOURCE).install.in >debian/$(PACKAGE_SOURCE).install
+	sed 's/@UPSTREAM_VERSION@/'$(UPSTREAM_VERSION)/ debian/$(PACKAGE_SOURCE).dkms.in >debian/$(PACKAGE_SOURCE).dkms
