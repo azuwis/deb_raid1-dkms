@@ -10,5 +10,5 @@ Package: raid1-dkms
 Architecture: all
 Depends: ${misc:Depends}, dkms
 Description: RAID1 kernel module with patch
- This the RAID1 kernel module from linux kernel 3.2.51
- For more info, see https://lkml.org/lkml/2012/9/13/28
+ This is the RAID1 kernel module from linux kernel 3.2.39 with the following
+ patch https://lkml.org/lkml/2012/9/13/28
