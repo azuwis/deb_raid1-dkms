@@ -294,7 +294,7 @@ static int delay_map(struct dm_target *ti, struct bio *bio,
 }
 
 static int delay_status(struct dm_target *ti, status_type_t type,
-			 char *result, unsigned maxlen)
+			char *result, unsigned maxlen)
 {
 	struct delay_c *dc = ti->private;
 	int sz = 0;
@@ -337,7 +337,7 @@ out:
 
 static struct target_type delay_target = {
 	.name	     = "delay",
-	.version     = {1, 1, 1},
+	.version     = {1, 1, 0},
 	.module      = THIS_MODULE,
 	.ctr	     = delay_ctr,
 	.dtr	     = delay_dtr,

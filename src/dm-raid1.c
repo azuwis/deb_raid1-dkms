@@ -1359,7 +1359,7 @@ static char device_status_char(struct mirror *m)
 
 
 static int mirror_status(struct dm_target *ti, status_type_t type,
-			  char *result, unsigned maxlen)
+			 char *result, unsigned int maxlen)
 {
 	unsigned int m, sz = 0;
 	struct mirror_set *ms = (struct mirror_set *) ti->private;
@@ -1414,7 +1414,7 @@ static int mirror_iterate_devices(struct dm_target *ti,
 
 static struct target_type mirror_target = {
 	.name	 = "mirror",
-	.version = {1, 12, 2},
+	.version = {1, 12, 1},
 	.module	 = THIS_MODULE,
 	.ctr	 = mirror_ctr,
 	.dtr	 = mirror_dtr,

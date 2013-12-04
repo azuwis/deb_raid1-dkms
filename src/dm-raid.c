@@ -1018,7 +1018,7 @@ static int raid_map(struct dm_target *ti, struct bio *bio, union map_info *map_c
 }
 
 static int raid_status(struct dm_target *ti, status_type_t type,
-			char *result, unsigned maxlen)
+		       char *result, unsigned maxlen)
 {
 	struct raid_set *rs = ti->private;
 	unsigned raid_param_cnt = 1; /* at least 1 for chunksize */
@@ -1208,7 +1208,7 @@ static void raid_resume(struct dm_target *ti)
 
 static struct target_type raid_target = {
 	.name = "raid",
-	.version = {1, 1, 1},
+	.version = {1, 1, 0},
 	.module = THIS_MODULE,
 	.ctr = raid_ctr,
 	.dtr = raid_dtr,

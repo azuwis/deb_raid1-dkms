@@ -332,7 +332,7 @@ static int flakey_end_io(struct dm_target *ti, struct bio *bio,
 }
 
 static int flakey_status(struct dm_target *ti, status_type_t type,
-			  char *result, unsigned maxlen)
+			 char *result, unsigned int maxlen)
 {
 	unsigned sz = 0;
 	struct flakey_c *fc = ti->private;
@@ -405,7 +405,7 @@ static int flakey_iterate_devices(struct dm_target *ti, iterate_devices_callout_
 
 static struct target_type flakey_target = {
 	.name   = "flakey",
-	.version = {1, 2, 1},
+	.version = {1, 2, 0},
 	.module = THIS_MODULE,
 	.ctr    = flakey_ctr,
 	.dtr    = flakey_dtr,

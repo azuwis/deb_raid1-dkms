@@ -1324,7 +1324,7 @@ static void multipath_resume(struct dm_target *ti)
  *      num_paths num_selector_args [path_dev [selector_args]* ]+ ]+
  */
 static int multipath_status(struct dm_target *ti, status_type_t type,
-			     char *result, unsigned maxlen)
+			    char *result, unsigned int maxlen)
 {
 	int sz = 0;
 	unsigned long flags;
@@ -1623,7 +1623,7 @@ out:
  *---------------------------------------------------------------*/
 static struct target_type multipath_target = {
 	.name = "multipath",
-	.version = {1, 3, 1},
+	.version = {1, 3, 0},
 	.module = THIS_MODULE,
 	.ctr = multipath_ctr,
 	.dtr = multipath_dtr,
