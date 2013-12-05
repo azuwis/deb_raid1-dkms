@@ -1,6 +1,7 @@
-raid1-dkms (0.1-1+netease2) unstable; urgency=low
+raid1-dkms (0.2-1+netease1) unstable; urgency=low
 
   * Update description about multiple kernel versions
+  * Remove src/3.2.39/.Kconfig.swp
 
  -- Zhong Jianxin <azuwis@gmail.com>  Thu, 05 Dec 2013 15:17:37 +0800
 
